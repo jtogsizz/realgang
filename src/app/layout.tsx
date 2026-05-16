@@ -18,8 +18,13 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "JTO | REALGANG",
   description: "Digital identity and underground aesthetic hub.",
+  // COMO USAR O FAVICON:
+  // Coloque seu arquivo 'favicon.ico' ou 'icon.png' manualmente dentro da pasta public/favicon/
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon/favicon.ico" },
+      { url: "/favicon/icon.png", type: "image/png" }
+    ],
   },
   openGraph: {
     title: "JTO | REALGANG",

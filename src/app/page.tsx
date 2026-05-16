@@ -6,6 +6,7 @@ import LoadingScreen from "@/components/LoadingScreen";
 import HeroSection from "@/components/HeroSection";
 import SocialSection from "@/components/SocialSection";
 import ProjectShowcase from "@/components/ProjectShowcase";
+import SetupSection from "@/components/SetupSection";
 import LiveStatus from "@/components/LiveStatus";
 import InteractiveTerminal from "@/components/InteractiveTerminal";
 
@@ -40,11 +41,15 @@ export default function Home() {
           
           <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-10" />
           
-          <SocialSection />
+          <ProjectShowcase />
           
           <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-10" />
+
+          <SetupSection />
+
+          <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-10" />
           
-          <ProjectShowcase />
+          <SocialSection />
           
           <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-10" />
           
