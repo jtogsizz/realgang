@@ -66,10 +66,10 @@ export default function ProjectShowcase() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: index * 0.15 }}
-            className={`group relative p-6 md:p-8 rounded-2xl glassmorphism-dark border border-white/5 transition-all duration-500 overflow-hidden ${project.border}`}
+            className="glassmorphism-dark rounded-3xl p-6 md:p-8 border border-white/5 relative overflow-hidden group transition-all duration-500 hover:border-[#6d28d9]/30 shadow-[0_0_30px_rgba(0,0,0,0.2)] md:shadow-[0_0_50px_rgba(0,0,0,0.3)]"
           >
-            {/* fundo com gradiente */}
-            <div className={`absolute inset-0 bg-gradient-to-r ${project.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+            {/* Glow de fundo - desativado no mobile */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#6d28d9]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 hidden md:block" />
 
             <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
               <div className="max-w-md">

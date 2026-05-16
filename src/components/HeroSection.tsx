@@ -10,7 +10,7 @@ export default function HeroSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="relative z-20 w-full max-w-5xl mx-auto rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(109,40,217,0.15)]"
+        className="relative z-20 w-full max-w-5xl mx-auto rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_30px_rgba(109,40,217,0.1)] md:shadow-[0_0_50px_rgba(109,40,217,0.15)]"
       >
         <div className="w-full h-40 md:h-64 relative bg-neutral-900/50">
           {/* eslint-disable-next-line @next/next/no-img-element */}

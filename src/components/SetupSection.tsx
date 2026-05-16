@@ -23,10 +23,10 @@ export default function SetupSection() {
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="group relative rounded-3xl glassmorphism-dark border border-white/5 overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.5)] p-2 md:p-3"
+        className="group relative rounded-3xl glassmorphism-dark border border-white/5 overflow-hidden shadow-[0_0_20px_rgba(0,0,0,0.4)] md:shadow-[0_0_40px_rgba(0,0,0,0.5)] p-2 md:p-3"
       >
-        {/* brilho roxo discreto no fundo */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#6d28d9]/5 via-transparent to-[#6d28d9]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+        {/* brilho roxo discreto no fundo - desativado no mobile */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#6d28d9]/5 via-transparent to-[#6d28d9]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none hidden md:block" />
 
         <div className="relative w-full aspect-video md:aspect-[21/9] rounded-2xl overflow-hidden bg-black/50 border border-white/5">
           {/* overlay escuro suave */}

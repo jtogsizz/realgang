@@ -36,9 +36,10 @@ export default function CustomCursor() {
     };
   }, []);
 
-  // Use a generic style to hide cursor on touch devices to avoid ghost cursor
-  if (typeof window !== "undefined" && window.matchMedia("(hover: none)").matches) {
-    return null;
+  // Desativa completamente em dispositivos touch ou telas pequenas
+  if (typeof window !== "undefined") {
+    const isTouch = window.matchMedia("(hover: none)").matches || window.innerWidth < 768;
+    if (isTouch) return null;
   }
 
   return (

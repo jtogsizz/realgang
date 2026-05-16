@@ -75,6 +75,8 @@ export default function LiveStatus() {
     };
   }, [visitors, displayVisitors]);
 
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+
   return (
     <section className="py-12 px-4 max-w-5xl mx-auto z-10 relative">
       <motion.div
@@ -82,10 +84,12 @@ export default function LiveStatus() {
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
-        className="glassmorphism-dark rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-white/10 relative overflow-hidden group shadow-[0_0_50px_rgba(0,0,0,0.3)]"
+        className="glassmorphism-dark rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-white/10 relative overflow-hidden group shadow-[0_0_30px_rgba(0,0,0,0.2)] md:shadow-[0_0_50px_rgba(0,0,0,0.3)]"
       >
-        {/* glow da borda */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#6d28d9]/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+        {/* glow da borda - desativado no mobile */}
+        {!isMobile && (
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#6d28d9]/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+        )}
 
         {/* avatar e info */}
         <div className="flex flex-col md:flex-row items-center gap-6 z-10">

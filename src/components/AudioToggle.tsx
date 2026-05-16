@@ -38,7 +38,7 @@ export default function AudioToggle() {
       animate={{ opacity: 1 }}
       transition={{ delay: 2.5 }}
       onClick={toggleAudio}
-      className="fixed bottom-6 right-6 z-50 p-3 rounded-full glassmorphism-dark hover:bg-white/10 transition-colors group"
+      className="fixed bottom-6 right-6 z-50 p-3 rounded-full glassmorphism-dark hover:bg-white/10 transition-colors group hidden md:flex"
       aria-label="Toggle Audio"
     >
       {isPlaying ? (

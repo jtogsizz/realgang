@@ -92,8 +92,12 @@ export function LiveMetric({ config }: { config: MetricConfig }) {
     
     const newFormattedValue = `${config.prefix || ""}${newVal}${config.suffix || ""}`;
     
-    // efeito de glitch
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+
+    // efeito de glitch - reduzido no mobile
     let glitchCount = 0;
+    const maxGlitches = isMobile ? 1 : 3;
+    
     const glitchInterval = setInterval(() => {
         setDisplayValue(
             newFormattedValue.split('').map(char => {
@@ -103,13 +107,13 @@ export function LiveMetric({ config }: { config: MetricConfig }) {
         );
         glitchCount++;
         
-        if (glitchCount > 3) {
+        if (glitchCount > maxGlitches) {
             clearInterval(glitchInterval);
             setDisplayValue(newFormattedValue);
             setCurrentValue(newFormattedValue);
             setTimeout(() => setIsUpdating(false), 800);
         }
-    }, 40);
+    }, isMobile ? 80 : 40);
 
   }, [currentValue, config]);
 

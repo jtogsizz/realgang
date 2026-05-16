@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 // Component definition
 
 export default function Background() {
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+
   return (
     <div className="fixed inset-0 z-[-1] overflow-hidden bg-[#050505] pointer-events-none">
       {/* Deep dark grid effect for depth */}
@@ -15,10 +17,10 @@ export default function Background() {
         }}
       />
 
-      {/* Ambient Red Glows */}
+      {/* Ambient Red Glows - Simplificados no mobile */}
       <motion.div
-        className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-[#6d28d9]/10 blur-[120px]"
-        animate={{
+        className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-[#6d28d9]/10 blur-[80px] md:blur-[120px]"
+        animate={isMobile ? {} : {
           x: [0, 50, 0],
           y: [0, 30, 0],
           scale: [1, 1.1, 1],
@@ -30,8 +32,8 @@ export default function Background() {
         }}
       />
       <motion.div
-        className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-[#7c3aed]/5 blur-[150px]"
-        animate={{
+        className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-[#7c3aed]/5 blur-[100px] md:blur-[150px]"
+        animate={isMobile ? {} : {
           x: [0, -40, 0],
           y: [0, -50, 0],
           scale: [1, 1.2, 1],
@@ -42,19 +44,21 @@ export default function Background() {
           ease: "easeInOut",
         }}
       />
-      <motion.div
-        className="absolute top-[40%] left-[60%] w-[30%] h-[30%] rounded-full bg-[#6d28d9]/5 blur-[100px]"
-        animate={{
-          x: [0, -60, 0],
-          y: [0, 40, 0],
-          scale: [1, 0.9, 1],
-        }}
-        transition={{
-          duration: 18,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
+      {!isMobile && (
+        <motion.div
+          className="absolute top-[40%] left-[60%] w-[30%] h-[30%] rounded-full bg-[#6d28d9]/5 blur-[100px]"
+          animate={{
+            x: [0, -60, 0],
+            y: [0, 40, 0],
+            scale: [1, 0.9, 1],
+          }}
+          transition={{
+            duration: 18,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      )}
 
       {/* Noise overlay for cinematic underground feel */}
       <div 
