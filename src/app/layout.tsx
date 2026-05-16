@@ -19,11 +19,14 @@ export const metadata: Metadata = {
   title: "JTO | REALGANG",
   description: "Digital identity and underground aesthetic hub.",
   // COMO USAR O FAVICON:
-  // Coloque seu arquivo 'favicon.ico' ou 'icon.png' manualmente dentro da pasta public/favicon/
+  // Substitua as imagens na raiz da pasta public/ com seus respectivos tamanhos.
   icons: {
     icon: [
-      { url: "/favicon/favicon.ico" },
-      { url: "/favicon/icon.png", type: "image/png" }
+      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
+      { url: "/icon.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
   },
   openGraph: {
